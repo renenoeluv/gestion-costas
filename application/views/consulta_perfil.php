@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lista de Países</title>
+    <title>Playa Lorem Ipsum</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url("assets/vendor/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
@@ -19,6 +19,7 @@
 
     <!-- Custom CSS -->
     <link href="<?php echo base_url("assets/dist/css/sb-admin-2.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/morris-float.css"); ?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url("assets/vendor/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet" type="text/css">
@@ -367,10 +368,10 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-        <div id="page-wrapper">
+        <div id="page-wrapper"> <!-- aca empieza el contenido -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Países</h1>
+                    <h1 class="page-header">Perfil Nº XX Playa Lorem Ipsum </h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -379,18 +380,11 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Lista de Países
+                            Gráfico "Distancia/Elevación" del Perfil
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <button type="submit" class="btn btn-default" id="btn-mostrar-paises">Mostrar Paises</button>
-                                </div>
-                                <div class="col-lg-6">
-                                    <ul>
-                                        <div id = "resultado"> </div>
-                                    </ul>
-                                </div>
+                                <div id="mediciones-grafico"></div>
                             </div>
                             <!-- /.row (nested) -->
                         </div>
@@ -407,8 +401,14 @@
     </div>
     <!-- /#wrapper -->
 
+    
+
     <!-- jQuery -->
     <script src="<?php echo base_url("assets/vendor/jquery/jquery.min.js"); ?>"></script>
+
+    <!-- MorrisJS -->
+    <script src="<?php echo base_url("assets/vendor/morrisjs/morris.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/vendor/raphael/raphael.min.js"); ?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url("assets/vendor/bootstrap/js/bootstrap.min.js"); ?>"></script>
@@ -421,6 +421,16 @@
 
     <!-- AJAX para eventos -->
     <script src="<?php echo base_url("assets/js/ajax.js"); ?>"></script>
+
+    <!-- MorrisJS Graph Constructor -->
+    <script type="text/javascript">
+    Morris.Line(
+                <?php
+                $CI =& get_instance();
+                echo $CI->json_placeholder();
+                ?>
+                );
+    </script>
 
 
 </body>
