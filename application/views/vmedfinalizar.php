@@ -233,17 +233,18 @@
 								<thead>
 									<tr>
 										<th colspan="4">Medidas perfil n°x<small><br>Encargado: Nombre del encargado.<br>Integrantes: Nombre de los integrantes.</small></th>
-										<th rowspan="2">observaciones</th>
+										<!--<th rowspan="2">observaciones</th>-->
 									</tr>
 									<tr>
 										<th>Em</th>
 										<th>E</th>
 										<th>Dh</th>
 										<th>Dv</th>
+										<th>Observaciones</th>
 									</tr>
 								</thead>
 								</thead>
-								<tbody>
+								<tbody id="mediciones">
 									<tr >
 										<td class="editText">0</td>
 										<td class="editText">1</td>
@@ -325,14 +326,14 @@
 
   						switch ($perfil->BIT_ESTADO) {
   							case 'vacio':?>
-  								<button type="button" class="btn btn-danger">Perfil <?php echo $key+1 ?></button>
+  								<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-danger">Perfil <?php echo $key+1 ?></button>
   								<?php break; 
   							case 'borrador': ?>
-  								<button type="button" class="btn btn-primary">Perfil <?php echo $key+1 ?></button>
+  								<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-primary">Perfil <?php echo $key+1 ?></button>
   									<?php break; 	
 
   							case 'confirmado': ?>
-  							<button type="button" class="btn btn-success">Perfil <?php echo $key+1 ?></button>
+  							<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-success">Perfil <?php echo $key+1 ?></button>
   								<?php break;
   						}
 
@@ -406,16 +407,33 @@
 	</div>
 	<!-- /#wrapper -->
 
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
+<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?php echo base_url(); ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo base_url(); ?>assets/dist/js/sb-admin-2.js"></script>
+
+    <!-- jquery para cargar datos de perfiles -->
+    <script src="<?php echo base_url();?>assets/js/perfil.js"></script>
+
+
+	<!-- jQuery -->
+	<!--<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript 
 	<script src="js/bootstrap.min.js"></script>
 
 	<!-- Morris Charts JavaScript -->
+	<!--
 	<script src="js/plugins/morris/raphael.min.js"></script>
 	<script src="js/plugins/morris/morris.min.js"></script>
-	<script src="js/plugins/morris/morris-data.js"></script>
+	<script src="js/plugins/morris/morris-data.js"></script>-->
 
 </body>
 
