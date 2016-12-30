@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Registrarse</title>
+    <title>Pagina Principal</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -80,54 +80,27 @@
       </div>
       <div class="panel-body">
         <!-- Texto -->
-
+<!-- De acuerdo a SGC_USUARIO-->
         <div class="form-group">
-          <b>Nombre Completo :</b>
-          <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre">
+          <b>Nombre y Apellido :</b>
+          <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre y apellido">
         </div>
 
         <div class="form-group">
-          <b>Nombre de Usuario :</b>
-          <input type="text" class="form-control" name="nombreusuario" placeholder="Ingrese su nombre de usuario">
+          <b>Correo :</b>
+          <input type="text" class="form-control" name="correo" placeholder="Ingrese sucorreo">
         </div>
         
-        <div class="form-group">
-          <b>Contraseña :</b>
-          <input type="password" class="form-control" name="contrasenia" placeholder="Ingrese su contraseña">
+    <div class="form-group">
+          <b>Tipo :</b>
+          <input type="text" class="form-control" name="nombreusuario" placeholder="Ingrese su tipo de usuario">
         </div>
-        <div class="form-group">
-          <b>Repita Contraseña :</b>
-          <input type="password" class="form-control" name="recontrasenia" placeholder="Ingrese su contraseña">
-        </div>
-        <div class="form-group">
-          <b>Año de nacimiento :</b>
-          <input type="text" class="form-control" name="aniona" placeholder="Ingrese su año de nacimiento">
-        </div>
-
-        <!-- RUT -->
-        <div class="form-group">
-          <b>RUT :</b>
-          <input type="text" class="form-control" name="RUT" placeholder="Ingrese su RUT">
-        </div>
-
-        <!-- Email -->
-        <div class="form-group">
-          <b>Correo electrónico :</b>
-          <input type="email" class="form-control" name="correo" placeholder="Ingrese su correo electrónico">
-        </div>
-        
-        <!-- Radio -->
-        <div class="form-group">
-          <b>Sexo :</b><br />
-          <input type="radio" name="sexo" value="m"> Masculino<br />
-          <input type="radio" name="sexo" value="f"> Femenino<br />
-        </div>
-
-
-        <div class="form-group">
-          <input type="checkbox" name="contenido" value="1"> <b>¿Ver la estructura del contenido que se envió?</b>
-        </div>
-      </div>
+         
+    <div class="form-group">
+	<b>Password:</b>
+          <input type="password" class="form-control" name="contrasena" placeholder="Ingrese su contraseña">
+    </div>
+      
 
 
       <div class="panel-footer">

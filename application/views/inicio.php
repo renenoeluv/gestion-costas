@@ -57,22 +57,22 @@
                         <a href="#">Sobre el proyecto</a>
                     </li>
                     <li>
-                        <a href="registrarse.html">Registrarse</a>
+                        <a href="./application/views/registrarse.php">Registrarse</a>
                     </li>
-
+	
                     <form enctype="multipart/form-data" method="post" action="./login.php" accept-charset="UTF-8">
                         <input type="hidden" name="enviado" value="1">
                         
                         <li>
                             <div class="form-group">
-                                <b>Nombre de Usuario :</b>
+                                <b>e-mail :</b>
                             <input type="text" class="form-control" name="nombreusuario" placeholder="Ingrese nombre de usuario">
                             </div>
                         </li>
                      
                         <li>
                             <div class="form-group">
-                                <b> Contraseña :</b>
+                                <b> password:</b>
                                 <input type="password" class="form-control" name="contrasenia" placeholder="Ingrese su password">
                                 </div>
                          </li>
