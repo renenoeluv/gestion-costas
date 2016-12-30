@@ -6,12 +6,12 @@ Sistema de Gestión de Costas - Desarrollo Web 2016
 - Bastian Toledo
 
 ## Actualizado 30-12-2016
-### Implementado:
+## Implementado:
 - Modelo para la obtención de las medidas de las bitacoras relacionado a un perfil de la playa.
 - JSON para retorno de datos
-### Falta:
+## Falta:
 - Implementar interpolación
-### Uso - Ejemplos
+## Uso - Ejemplos
 
 Para obtener la interpolación del perfil id 2 de la playa id 1 se escribe en la url:
    "/gestion-costas/index.php/perfil/get/1/2"
