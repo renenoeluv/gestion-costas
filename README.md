@@ -13,4 +13,4 @@ Agregué un recorrido de la arquitectura completa para mostrar todos los registr
 - Controller application/controller/Paises.php: tiene dos métodos: el index, que se llama al poner la url indicada más arriba y que carga a la vista, y otro método para poder listar paises, que invoca a un método del modelo, codifica la salida en json y luego hace un "echo" para generar la respuesta. Considerar que para poder acceder a este controller en la URL mencionada más arriba, lo tuve que agregar a application/config/routes.php
 - Model application/controller/Pais_model.php: tiene un único método para sacar todos los datos de la tabla de países. Están comentados los métodos que permiten hacer las otrasoperaciones (Crear, Modificar, Eliminar) pues no se usan en este ejemplo.
 - Pónganle un par de daos a la tabla de paises, pues no controlé el caso en que la query retorna cero registros.
-
+Test
