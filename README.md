@@ -1,6 +1,6 @@
 # gestion-costas
 Sistema de Gestión de Costas - Desarrollo Web 2016 / Front Caso de Uso "Ver Perfil Playa"
-## Actualizado 27-12-2016
+## Actualizado 3-1-2017
 ###Cambios:
-- Se agrega MVC de Perfiles **Para poder accederlo se tiene que agregar la ruta al controlador Perfiles en routes.php**
-- Se agrega gráfico Distancia/Elevación con un JSON placeholder.
+- Se finaliza Vista de Perfil. Los datos aún son placeholder
+- Se agrega un archivon JSON de ejemplo para ver el formato necesario para procesar datos hacia la vista
