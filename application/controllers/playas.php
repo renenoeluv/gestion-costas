@@ -10,7 +10,7 @@ class Playas extends CI_Controller {
 
 	public function muestra(){
 		$data['ubicacion']=$this->playa_model->get_ubicacion();
-		$this->load->view('mostrarInfo', $data);
+		$this->load->view('mostrarInfo2', $data);
 
 	}
 
