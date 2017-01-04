@@ -295,7 +295,7 @@
   									<?php break; 	
 
   							case 'confirmado': ?>
-  							<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-success">Perfil <?php echo $key+1 ?></button>
+  							<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" disabled="true" class="btn btn-success">Perfil <?php echo $key+1 ?></button>
   								<?php
   								 break;
   						}

@@ -14,3 +14,9 @@ Agregué un recorrido de la arquitectura completa para mostrar todos los registr
 - Model application/controller/Pais_model.php: tiene un único método para sacar todos los datos de la tabla de países. Están comentados los métodos que permiten hacer las otrasoperaciones (Crear, Modificar, Eliminar) pues no se usan en este ejemplo.
 - Pónganle un par de daos a la tabla de paises, pues no controlé el caso en que la query retorna cero registros.
 
+
+###DEV-1F:
+La vista espera el paso por metodo get del id de la campaña para poder cargar los perfiles y sus respectivos estados, ademas de el bloqueo de los botones sin ninguna medicion, cada vez que un perfil es confirmado, se modifica el estado de la bitacora correspondie y el boton confirmar tambien se bloquea para no ejecutar una accion inecesaria.
+Cada vez que se hace click en un perfil se cargan sus mediciones correspondientes.
+Falta el cargar completo de la pagina la primera vez, y el editar a las mediciones, y posibles modificaciones a la bd. 
+
