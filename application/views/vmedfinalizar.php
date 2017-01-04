@@ -18,7 +18,7 @@
 	<link href="<?php echo base_url(); ?>assets/dist/css/sb-admin.css" rel="stylesheet">
 
 	<!-- Morris Charts CSS -->
-	<link href="css/plugins/morris.css" rel="stylesheet">
+	<!--<link href="css/plugins/morris.css" rel="stylesheet">
 
 	<!-- Custom Fonts -->
 	<link href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,47 +29,9 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script>
-            
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
+      
  
-            $(function(){
-                $('.editText').dblclick( function(){
-                    var text = $(this).text();
-                    $(this).empty().html('<input type="text" size="7" value="'+text+'">').find('input').focus();
-                }).keypress( function(e){
-                    if(e.keyCode == 13){
-                        var text = $('input', this).val();
-                        $(this).html( text );
-                    }
-                });
-            });
-        </script>
-        <script>
-			function myFunction(tableID,cant) {
-				var table = document.getElementById(tableID);
-				var cant = document.getElementById(cant).value;
-				for (var i = cant - 1; i >= 0; i--) {
-					var rowCount = table.rows.length;
-   					var row = table.insertRow(rowCount);
-   					var cell1 = row.insertCell(0,"hola");
-   					cell1.className = "editText";
-   					cell1.innerHTML = "-";
-   					var cell2 = row.insertCell(1);
-   					cell2.className = "editText";
-   					cell2.innerHTML = "-";
-    				var cell3 = row.insertCell(2);
-    				cell3.className = "editText";
-    				cell3.innerHTML = "-";
-    				var cell4 = row.insertCell(3);
-    				cell4.className = "editText";
-    				cell4.innerHTML = "-";
-    				var cell5 = row.insertCell(4);
-    				cell5.className = "editText";
-    				cell5.innerHTML = "-";
-				};
-			}
-		</script>
 </head>
 
 <body>
@@ -334,7 +296,8 @@
 
   							case 'confirmado': ?>
   							<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-success">Perfil <?php echo $key+1 ?></button>
-  								<?php break;
+  								<?php
+  								 break;
   						}
 
   					} ?>
@@ -352,7 +315,7 @@
 						<input type="number" id="cant" size="4" placeholder="N° filas">
 						<button type="button" class="btn btn-primary" onclick="myFunction('dataTable','cant')">Añadir fila</button>
 						<button type="button" class="btn btn-primary">Guardar</button>
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Confirmar</button>
+						<button type="button" id="confirmar" class="btn btn-success" data-toggle="modal" data-target="#myModal">Confirmar</button>
 						<!-- Modal -->
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
@@ -369,7 +332,7 @@
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                    <a href="VerMedicion-paraFinalizar.html" type="button" class="btn btn-primary">Si</a>
+                                    <button class="btn btn-primary" id="rooney" data-dismiss="modal">Si</button>
                                   </div>
                                 </div>
                               </div>
@@ -421,6 +384,48 @@
 
     <!-- jquery para cargar datos de perfiles -->
     <script src="<?php echo base_url();?>assets/js/perfil.js"></script>
+
+
+      <script>
+            
+
+            $(function(){
+                $('.editText').dblclick( function(){
+                    var text = $(this).text();
+                    $(this).empty().html('<input type="text" size="7" value="'+text+'">').find('input').focus();
+                }).keypress( function(e){
+                    if(e.keyCode == 13){
+                        var text = $('input', this).val();
+                        $(this).html( text );
+                    }
+                });
+            });
+        </script>
+        <script>
+			function myFunction(tableID,cant) {
+				var table = document.getElementById(tableID);
+				var cant = document.getElementById(cant).value;
+				for (var i = cant - 1; i >= 0; i--) {
+					var rowCount = table.rows.length;
+   					var row = table.insertRow(rowCount);
+   					var cell1 = row.insertCell(0,"hola");
+   					cell1.className = "editText";
+   					cell1.innerHTML = "-";
+   					var cell2 = row.insertCell(1);
+   					cell2.className = "editText";
+   					cell2.innerHTML = "-";
+    				var cell3 = row.insertCell(2);
+    				cell3.className = "editText";
+    				cell3.innerHTML = "-";
+    				var cell4 = row.insertCell(3);
+    				cell4.className = "editText";
+    				cell4.innerHTML = "-";
+    				var cell5 = row.insertCell(4);
+    				cell5.className = "editText";
+    				cell5.innerHTML = "-";
+				};
+			}
+		</script>
 
 
 	<!-- jQuery -->

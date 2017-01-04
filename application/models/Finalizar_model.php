@@ -23,6 +23,22 @@ class Finalizar_model extends CI_Model {
   }
 
 
+  public function llenartabla($bit_id){
+  $query=$this->db->get_where('SGC_MEDICION',array('SGC_BITACORA_BIT_ID'=>$bit_id));
+  return $query->result();
+
+  }
+
+  public function set_estado_bit($bit_id){
+    $data = array(
+            'BIT_ESTADO' => 'confirmado'
+
+        );
+        $this->db->where('BIT_ID', $bit_id);
+        return $this->db->update('SGC_BITACORA', $data);
+    }
+
+
   /*public function perfiLfila($perfiles,$idcamp){
 
   	$vista= array();
