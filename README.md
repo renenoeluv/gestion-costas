@@ -14,3 +14,4 @@ Agregué un recorrido de la arquitectura completa para mostrar todos los registr
 - Model application/controller/Pais_model.php: tiene un único método para sacar todos los datos de la tabla de países. Están comentados los métodos que permiten hacer las otrasoperaciones (Crear, Modificar, Eliminar) pues no se usan en este ejemplo.
 - Pónganle un par de daos a la tabla de paises, pues no controlé el caso en que la query retorna cero registros.
 
+# logincosta
