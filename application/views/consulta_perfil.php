@@ -122,7 +122,7 @@
     Morris.Line(
                 <?php
                 $CI =& get_instance();
-                echo $CI->json_placeholder();
+                echo $CI->json_medidas();
                 ?>
                 );
     </script>
@@ -137,7 +137,7 @@
     <script type="text/javascript">
     $('#tablaMed').bootstrapTable(<?php
                 $CI =& get_instance();
-                echo $CI->json_tablePH();
+                echo $CI->json_table();
                 ?>
                 );
     </script>
