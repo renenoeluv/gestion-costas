@@ -173,17 +173,27 @@
 						<div class="table-responsive">
 							<ol class="breadcrumb">
 								<li class="active">
-									<i class="fa fa-edit"></i> Playa: Playa del Deporte
+									<i class="fa fa-edit"></i> Playa: <?php echo $playa[0]->PLA_NOMBRE; ?>
 								</li>
 								<li class="active">
-									Fecha: dd/mm/aaaa
+									<?php
+										echo $fecha[0]->FECHA;
+									 ?>
 								</li>
 								<li class="active">
-									integrantes: aaaaaaaaa@alumnos.uv.cl
+									Avance: <?php
+									$cont=0;
+									$cont1=0;
+									foreach ($avance1 as $key => $value) {
+										if($value->BIT_ESTADO == 'confirmado'){
+											$cont1++;
+										}
+										$cont=$key+1;
+									}
+									$cont2=($cont1/$cont)*100;
+									echo $cont2; ?>%
 								</li>
-								<li class="active">
-									Avance: cc%
-								</li>
+								<li><input type="hidden" id="idcamp" value=<?php echo $idcamp; ?>></li>
 							</ol>
 						</div>
 					</div>
@@ -194,7 +204,16 @@
 							<table id="dataTable" class="table table-bordered">
 								<thead>
 									<tr>
-										<th colspan="4">Medidas perfil n°x<small><br>Encargado: Nombre del encargado.<br>Integrantes: Nombre de los integrantes.</small></th>
+										<th colspan="4"><div id="Nperfil">Medidas Perfil <?php foreach ($perfiles as $key => $val) {
+											if($val->BIT_ESTADO!='vacio'){
+											echo  $key+1;
+											break;
+											}
+										} ?>
+										</div>
+										<small>Encargado: <?php foreach ($encargado as $m => $val) {
+											echo $val->USR_NOMBRE_APELLIDO;
+										} ?></small></th>
 										<!--<th rowspan="2">observaciones</th>-->
 									</tr>
 									<tr>
@@ -207,95 +226,36 @@
 								</thead>
 								</thead>
 								<tbody id="mediciones">
+									<?php foreach ($llenartabla as $key => $llenar) { ?>
 									<tr >
-										<td class="editText">0</td>
-										<td class="editText">1</td>
-										<td class="editText">0</td>
-										<td class="editText">213</td>
-										<td class="editText">Primera estacion</td>
+									<?php if($llenar!='NO SE ENCONTRARON MEDICIONES') { ?>
+										<td> <?php echo $llenar->MED_ESTACION_MEDICION; ?> </td>
+										<td> <?php echo $llenar->MED_ESTACION; ?> </td>
+										<td> <?php echo $llenar->MED_DISTANCIA_HORIZONTAL; ?> </td>
+										<td> <?php echo $llenar->MED_DISTANCIA_VERTICAL; ?> </td>
+										<td> <?php echo $llenar->MED_COMENTARIO; ?> </td>
+										<input type="hidden" value=<?php echo $llenar->MED_ID ?> >
 									</tr>
-									<tr >
-										<td class="editText">1</td>
-										<td class="editText">2</td>
-										<td class="editText">1.5</td>
-										<td class="editText">30</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">1</td>
-										<td class="editText">3</td>
-										<td class="editText">3</td>
-										<td class="editText">36</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">1</td>
-										<td class="editText">4</td>
-										<td class="editText">4.5</td>
-										<td class="editText">50</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">1</td>
-										<td class="editText">5</td>
-										<td class="editText">6</td>
-										<td class="editText">61</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">1</td>
-										<td class="editText">6</td>
-										<td class="editText">7,5</td>
-										<td class="editText">76</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">6</td>
-										<td class="editText">7</td>
-										<td class="editText">9</td>
-										<td class="editText">11</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">6</td>
-										<td class="editText">8</td>
-										<td class="editText">+1,5</td>
-										<td class="editText">24</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">6</td>
-										<td class="editText">9</td>
-										<td class="editText">+1,5</td>
-										<td class="editText">36</td>
-										<td class="editText"></td>
-									</tr>
-									<tr >
-										<td class="editText">6</td>
-										<td class="editText">10</td>
-										<td class="editText">+1,5</td>
-										<td class="editText">52</td>
-										<td class="editText">Observacion.</td>
-									</tr>
+									<?php } 
+									 } ?>
 								</tbody>
 							</table>
 						</div>
 					</div>
-
-					<!-- botones dinamicos--> 
+ 
   					<div class="col-xs-2 col-md-1" id="perfiles">
   					<?php foreach ($perfiles as $key => $perfil) { 
 
   						switch ($perfil->BIT_ESTADO) {
   							case 'vacio':?>
-  								<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-danger">Perfil <?php echo $key+1 ?></button>
+  								<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" disabled="true" class="btn btn-danger">Perfil <?php echo $perfil->SGC_PERFIL_PERF_NUMERO; ?></button>
   								<?php break; 
   							case 'borrador': ?>
-  								<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-primary">Perfil <?php echo $key+1 ?></button>
+  								<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" class="btn btn-primary">Perfil <?php echo $perfil->SGC_PERFIL_PERF_NUMERO; ?></button>
   									<?php break; 	
 
   							case 'confirmado': ?>
-  							<button type="button" value= " <?php echo $perfil->BIT_ID; ?>" disabled="true" class="btn btn-success">Perfil <?php echo $key+1 ?></button>
+  							<button type="button" value= " <?php echo $perfil->BIT_ID; ?>"  class="btn btn-success">Perfil <?php echo $perfil->SGC_PERFIL_PERF_NUMERO; ?></button>
   								<?php
   								 break;
   						}
@@ -311,10 +271,15 @@
   						<button type="button" class="btn btn-danger">Perfil 7</button>-->
   					</div>
   					<div class="row">
-					<div class="col-lg-12">
-						<input type="number" id="cant" size="4" placeholder="N° filas">
-						<button type="button" class="btn btn-primary" onclick="myFunction('dataTable','cant')">Añadir fila</button>
-						<button type="button" class="btn btn-primary">Guardar</button>
+					<div id="acciones" class="col-lg-12">
+
+
+							<!-- No hicimos el añadir fila por falta de tiempo, el resto esta todo funcionando-->
+
+						<!--<input type="number" id="cant" size="4" placeholder="N° filas">
+						<button type="button" class="btn btn-primary" onclick="myFunction('dataTable','cant')">Añadir fila</button>-->
+						<button type="button" id="editar" class="btn btn-primary">Editar</button>
+						<input type="hidden" id="guardar"  class="btn btn-success" value="Guardar cambios">
 						<button type="button" id="confirmar" class="btn btn-success" data-toggle="modal" data-target="#myModal">Confirmar</button>
 						<!-- Modal -->
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -332,7 +297,7 @@
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                    <button class="btn btn-primary" id="rooney" data-dismiss="modal">Si</button>
+                                    <button class="btn btn-primary" id="yes" data-dismiss="modal">Si</button>
                                   </div>
                                 </div>
                               </div>
@@ -354,7 +319,7 @@
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                    <a href="index.html" type="button" class="btn btn-primary">Si</a>
+                                    <button type="button" id="finalizar" class="btn btn-primary" data-dismiss="modal">Si</button>
                                   </div>
                                 </div>
                               </div>
@@ -385,23 +350,7 @@
     <!-- jquery para cargar datos de perfiles -->
     <script src="<?php echo base_url();?>assets/js/perfil.js"></script>
 
-
-      <script>
-            
-
-            $(function(){
-                $('.editText').dblclick( function(){
-                    var text = $(this).text();
-                    $(this).empty().html('<input type="text" size="7" value="'+text+'">').find('input').focus();
-                }).keypress( function(e){
-                    if(e.keyCode == 13){
-                        var text = $('input', this).val();
-                        $(this).html( text );
-                    }
-                });
-            });
-        </script>
-        <script>
+       <!-- <script>
 			function myFunction(tableID,cant) {
 				var table = document.getElementById(tableID);
 				var cant = document.getElementById(cant).value;
@@ -425,7 +374,7 @@
     				cell5.innerHTML = "-";
 				};
 			}
-		</script>
+		</script>-->
 
 
 	<!-- jQuery -->
