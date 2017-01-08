@@ -85,6 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
+<<<<<<< HEAD
 <div class="col-lg-8">
                 <script src="http://widget.windguru.cz/js/wg_widget.php" type="text/javascript"></script>
                 <script language="JavaScript" type="text/javascript">
@@ -130,5 +131,7 @@ link_new_window:false
 //]]>
 </script>
 <div id="wg_target_div_443307_11442030"></div>
+=======
+>>>>>>> Graficar2
 </body>
 </html>
