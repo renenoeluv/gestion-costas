@@ -457,7 +457,7 @@
                     <?php foreach ($lista_playas as $playa) { ?>
                         <tbody>    
                          <tr>
-                            <td><p><?php echo $playa->PLA_NOMBRE;?></p> <img src="http://www.chileplayas.cl/wp-content/uploads/2013/12/playa-portales.jpg" width="280" height="150" alt=""></td>
+                            <td><p><?php echo $playa->PLA_NOMBRE;?></p> <img src=<?php echo $playa ->PLA_FOTO_PRINCIPAL  ?> width="280" height="150" alt=""></td>
                             <td><button type="button" class="btn btn-primary">Ver Informacion de Playa</button>  <button type="button" class="btn btn-success">Crear Campaña</button> 
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -485,13 +485,13 @@
                                                                     <td><p><?php echo $campanha->CAMP_ESTADO;?></p></td> 
                                                                     <?php if(strcmp ($campanha->CAMP_ESTADO, "finalizada")!=0){?>
                                                                      <td>
-                                                                     <button type="button" class="btn btn-default btn-xs"> 
-                                                                            <a href="editarMedicion.html"><span class="glyphicon glyphicon-edit"></span>
-                                                                            </a></button>
+                                                                     <td><button type="button" class="btn btn-default btn-xs"> 
+                                                                            <a href="editarMedicion.html"><span class="glyphicon glyphicon-edit"></span></button></a>
                                                                             <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal"> 
                                                                             <span class="glyphicon glyphicon-remove-circle"></span></button>
                                                                             <a href="VerMedicion-paraFinalizar.html"><button type="button" class="btn btn-default btn-xs"> 
-                                                                            <span class="glyphicon glyphicon-ok"></span></button></a></td>
+                                                                            <span class="glyphicon glyphicon-ok"></span></button></a>
+                                                                     </td>
                                                                     <?php }}?>
                                                                 </tr>
                                                             <?php }?>

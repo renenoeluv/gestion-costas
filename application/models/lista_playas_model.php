@@ -26,7 +26,7 @@ class Lista_playas_model extends CI_Model {
 
   }
 public function consultar_playas($region){
-     return $this->db->distinct()->select('PLA_ID,PLA_NOMBRE')->from('sgc_playa,SGC_REGION,SGC_CIUDAD')->where('SGC_REGION_REG_ID',$region.'and SGC_REGION.REG_ID=SGC_CIUDAD.SGC_REGION_REG_ID and SGC_CIUDAD.CIU_ID=SGC_PLAYA.SGC_CIUDAD_CIU_ID')->get()->result();
+     return $this->db->distinct()->select('PLA_ID,PLA_NOMBRE,PLA_FOTO_PRINCIPAL')->from('sgc_playa,SGC_REGION,SGC_CIUDAD')->where('SGC_REGION_REG_ID',$region.'and SGC_REGION.REG_ID=SGC_CIUDAD.SGC_REGION_REG_ID and SGC_CIUDAD.CIU_ID=SGC_PLAYA.SGC_CIUDAD_CIU_ID')->get()->result();
   // $query = $this->db->get();
     //if($query->num_rows() > 0) {
       //  $results = $query->result();
