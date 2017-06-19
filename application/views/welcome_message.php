@@ -356,6 +356,54 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     })
     </script>
 
+<<<<<<< HEAD
+<div class="col-lg-8">
+                <script src="http://widget.windguru.cz/js/wg_widget.php" type="text/javascript"></script>
+                <script language="JavaScript" type="text/javascript">
+                //<![CDATA[
+                WgWidget({
+                s: 120881, odh:0, doh:24, wj:'knots', tj:'c', waj:'m', fhours:72, lng:'es',
+                params: ['WINDSPD','GUST','SMER','TMPE','CDC','APCPs'],
+                first_row:true,
+                spotname:true,
+                first_row_minfo:true,
+                last_row:true,
+                lat_lon:true,
+                tz:true,
+                sun:true,
+                link_archive:false,
+                link_new_window:false
+                },
+                'wg_target_div_120881_14539444'
+                );
+                //]]>
+                </script>
+                <div id="wg_target_div_120881_14539444"></div>
+            </div>
+
+            <script src="http://widget.windguru.cz/js/wg_widget.php" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+WgWidget({
+s: 443307, odh:0, doh:24, wj:'knots', tj:'c', waj:'m', fhours:72, lng:'es',
+params: ['WINDSPD','GUST','SMER','TMPE','CDC','APCPs'],
+first_row:true,
+spotname:true,
+first_row_minfo:true,
+last_row:true,
+lat_lon:true,
+tz:true,
+sun:true,
+link_archive:false,
+link_new_window:false
+},
+'wg_target_div_443307_11442030'
+);
+//]]>
+</script>
+<div id="wg_target_div_443307_11442030"></div>
+=======
+>>>>>>> Graficar2
 </body>
 
 </html>
