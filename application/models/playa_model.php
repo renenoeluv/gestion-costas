@@ -5,11 +5,10 @@ class Playa_model extends CI_Model {
   
   public function __construct() {
     parent::__construct();
-<<<<<<< HEAD
   }
 
-  public function set_playa($id, $nom, $ori, $dger, $dtec, $fotosup, $fotopri, $lat, $long, $cod_ciudad, $cod_windguru, $pen);
-  }) {
+  public function set_playa($id, $nom, $ori, $dger, $dtec, $fotosup, $fotopri, $lat, $long, $cod_ciudad, $cod_windguru, $pen)
+  {
     $data = array(
       'PLA_ID' => $id,
       'PLA_NOMBRE' => $nom      
@@ -36,7 +35,8 @@ class Playa_model extends CI_Model {
     $this->db->delete('SGC_PLAYA', $data);
   }
 
-  public function update_playa($id, $nom, $ori, $dger, $dtec, $fotsup, $fotopri, &lat, &long, $cod_ciudad, $cod_windguru, $pen);
+  public function update_playa($id, $nom, $ori, $dger, $dtec, $fotsup, $fotopri, &lat, &long, $cod_ciudad, $cod_windguru, $pen)
+  {
     $this->db->set('PLA_NOMBRE', $nom);
     $this->db->set('PLA_ORIENTACION', $ori);
     $this->db->set('PLA_DESCRIPCION_GENERAL', $dger);
@@ -63,12 +63,6 @@ class Playa_model extends CI_Model {
       return false;
     }
   }
-}
-
-?>
-=======
-    $this->load->database();
-  }
 
   public function get_ubicacion(){
   	$query=$this->db->query("SELECT  PLA_CODIGO_WINDGURU from SGC_PLAYA where PLA_ID=1");
@@ -84,4 +78,3 @@ class Playa_model extends CI_Model {
 }
 
   ?>
->>>>>>> test

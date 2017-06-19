@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-<<<<<<< HEAD
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('Mejor_playa');
@@ -17,7 +16,7 @@ class Welcome extends CI_Controller {
 		$result = $this->db->get('sgc_playa');
 		$data = array('consulta'=>$result);
 		$this->load->view('welcome_message', $data);
-=======
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -40,13 +39,11 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-<<<<<<< HEAD
+
 		$this->load->view('inicio');
-=======
+
 		$data['tabla'] = $this->Perfil_model->get_perfil(0, 0);
 		$this->load->view('welcome_message');
->>>>>>> master
->>>>>>> master
 	}
 
 }
