@@ -20,10 +20,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | development and MUST NOT be used in production!
 |
 | If you need to allow multiple domains, remember that this file is still
-| a PHP script and you can easily do that on your own.
+| a PHP script and you can easily do that on your own.httP://127.0.0.1httP://127.0.0.1/CRUD-CodeIgniter-Node/CodeIgnite
 |
 */
 $config['base_url'] = 'http://localhost/gestion-costas';
+
 
 /*
 |--------------------------------------------------------------------------

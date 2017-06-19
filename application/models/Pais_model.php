@@ -6,7 +6,7 @@ class Pais_model extends CI_Model {
   public function __construct() {
     parent::__construct();
   }
-/*
+
   public function set_pais($id, $nom) {
     $data = array(
       'PAI_ID' => $id,
@@ -29,17 +29,13 @@ class Pais_model extends CI_Model {
     $this->db->where('PAI_ID', $cod);
     $this->db->update('SGC_PAIS');
   }
-*/
+
   public function get_paises() {
     $this->db->select('*');
     $this->db->from('SGC.SGC_PAIS');
     $this->db->order_by('PAI_NOMBRE DESC');
     $query = $this->db->get();    
-    if($query->num_rows() > 0) {
-      return $query;
-    } else {
-      return false;
-    }
+    
   }
 }
 
