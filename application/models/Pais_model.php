@@ -35,11 +35,7 @@ class Pais_model extends CI_Model {
     $this->db->from('SGC.SGC_PAIS');
     $this->db->order_by('PAI_NOMBRE DESC');
     $query = $this->db->get();    
-    if($query->num_rows() > 0) {
-      return $query;
-    } else {
-      return false;
-    }
+    
   }
 }
 
