@@ -107,4 +107,8 @@ $config['format'] = 'json'; // available format : xml|raw|json  or empty for php
 
 # IpInfoDb API :
 
+<<<<<<< HEAD
+# logincosta
+=======
 For more information about the API please visit : http://ipinfodb.com
+>>>>>>> master

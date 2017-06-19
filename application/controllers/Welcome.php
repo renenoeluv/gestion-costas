@@ -40,8 +40,12 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+<<<<<<< HEAD
+		$this->load->view('inicio');
+=======
 		$data['tabla'] = $this->Perfil_model->get_perfil(0, 0);
 		$this->load->view('welcome_message');
+>>>>>>> master
 >>>>>>> master
 	}
 
