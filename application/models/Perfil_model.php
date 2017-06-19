@@ -2,11 +2,45 @@
 if(!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Perfil_model extends CI_Model {
+<<<<<<< HEAD
+  
+=======
 
+>>>>>>> test
   public function __construct() {
     parent::__construct();
   }
 
+<<<<<<< HEAD
+
+  public function get_bitacoras($perfil_id) {
+    $this->db->select('BIT_ID,BIT_FECHA_HORA');
+    $this->db->from('SGC_BITACORA');
+	  $this->db->where(' SGC_PERFIL_PERF_NUMERO', $perfil_id);
+    $query = $this->db->get();    
+    if($query->num_rows() > 0) {
+      return $query;
+    } else {
+      return false;
+    }
+  }
+
+  public function get_mediciones($bitacora_id) {
+    $this->db->select('MED_DISTANCIA_HORIZONTAL,MED_DISTANCIA_VERTICAL');
+    $this->db->from('SGC_MEDICION');
+    $this->db->where('SGC_BITACORA_BIT_ID', $bitacora_id);
+    $query = $this->db->get();    
+    if($query->num_rows() > 0) {
+      return $query;
+    } else {
+      return false;
+    }
+  }
+
+}
+
+?>
+=======
   public function get_bitacoras($id_playa, $id_perfil) {
     $sql = "SELECT B.BIT_ID AS id, DATE(B.BIT_FECHA_HORA) AS fecha FROM SGC_PERFIL P INNER JOIN SGC_BITACORA B ON P.PERF_NUMERO = B.SGC_PERFIL_PERF_NUMERO WHERE P.SGC_PLAYA_PLA_ID = ? AND P.PERF_NUMERO = ? ORDER BY B.BIT_ID ASC";
     $parametros = array((int) $id_playa, (int) $id_perfil);
@@ -103,3 +137,4 @@ class Perfil_model extends CI_Model {
     return $interpolacion;
   }
 }
+>>>>>>> test
