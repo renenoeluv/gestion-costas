@@ -1,11 +1,10 @@
 # gestion-costas
-<<<<<<< HEAD
 Sistema de Gestión de Costas - Desarrollo Web 2016 / Front Caso de Uso "Ver Perfil Playa"
 ## Actualizado 3-1-2017
 ###Cambios:
 - Se finaliza Vista de Perfil. Los datos aún son placeholder
 - Se agrega un archivon JSON de ejemplo para ver el formato necesario para procesar datos hacia la vista
-=======
+
 Sistema de Gestión de Costas - Desarrollo Web 2016
 ## Integrantes
 - Alfonso Prado
@@ -54,4 +53,16 @@ Sistema de Gestión de Costas - Desarrollo Web 2016
 ### Falta:
 - Implementar interpolación
 
->>>>>>> test
+
+
+###DEV-1F:
+La vista espera el paso por metodo get del id de la campaña para poder cargar los perfiles y sus respectivos estados, ademas de el bloqueo de los botones sin ninguna medicion, cada vez que un perfil es confirmado, se modifica el estado de la bitacora correspondie y el boton confirmar tambien se bloquea para no ejecutar una accion inecesaria.
+Cada vez que se hace click en un perfil se cargan sus mediciones correspondientes.
+Falta el cargar completo de la pagina la primera vez, y el editar a las mediciones, y posibles modificaciones a la bd.
+
+
+###DEV1-F NOVEDADES 06-01-2017:
+Entrega final , con el editar agregado y el finalizar campaña, reconoce los perfiles y sus estados, ademas de la carga inicial de los datos al llamar la vista con el idcamp por get.
+
+
+
