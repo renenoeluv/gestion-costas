@@ -76,9 +76,20 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+<<<<<<< HEAD
+	'username' => 'root',
+	'password' => 'comparsa1',
+	'database' => 'testdb',
+=======
+<<<<<<< HEAD
+	'username' => 'root',
+	'password' => '',
+=======
 	'username' => 'sgc',
 	'password' => 'sgc',
+>>>>>>> master
 	'database' => 'sgc',
+>>>>>>> master
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

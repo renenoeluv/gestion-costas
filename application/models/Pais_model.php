@@ -6,6 +6,7 @@ class Pais_model extends CI_Model {
   public function __construct() {
     parent::__construct();
   }
+<<<<<<< HEAD
 
   public function set_pais($id, $nom) {
     $data = array(
@@ -30,6 +31,9 @@ class Pais_model extends CI_Model {
     $this->db->update('SGC_PAIS');
   }
 
+=======
+
+>>>>>>> master
   public function get_paises() {
     $this->db->select('*');
     $this->db->from('SGC.SGC_PAIS');
